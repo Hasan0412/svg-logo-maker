@@ -1,8 +1,14 @@
 // Import required modules
 const fs = require('fs');
 const { getLogoColor } = require('./lib/colorHandler');
-const { getLogoText } = require('./lib/textHandler');
 const { circle, triangle, square } = require('./lib/shape');
+const { getShapeChoiceQuery, getShapeColorQuery } = require('./lib/query');
+const {
+    getLogoTextQuery,
+    getShapeChoiceQuery,
+    getShapeColorQuery,
+    getTextColorQuery
+} = require('./lib/query');
 
 // Define the SVG template with a placeholder for shapes and text
 const svgTemplate =
@@ -13,16 +19,12 @@ const svgTemplate =
 // Function to create the logo
 async function createLogo() {
   // Get logo text and color from user input
-  const logoText = await getLogoText();
-  const textColor = await getLogoColor();
+  const logoText = await getLogoTextQuery();
+  const textColor = await getLogoColorQuery();
 
- // Display available shape options
- const shapeOptions = ['circle', 'triangle', 'square'];
- console.log('Available shapes:', shapeOptions.join(', '));
-
- // Get user-selected shape and shape color
- const selectedShape = await getInput('Choose a shape from the list: ');
- const shapeColor = await getLogoColor();
+  const shapeOptions = ['circle', 'triangle', 'square'];
+  const selectedShape = await getShapeChoiceQuery(shapeOptions);
+  const shapeColor = await getShapeColorQuery();
 
  // Generate SVG code for the selected shape
  let shapeSvg = '';
