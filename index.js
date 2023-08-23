@@ -1,13 +1,13 @@
 // Import required modules
 const fs = require('fs');
-const { getLogoColor } = require('./lib/JS/colorHandler');
+const { getLogoColor } = require('./lib/colorHandler');
 const { circle, triangle, square } = require('./lib/JS/shape');
 const {
     getLogoTextQuery,
     getShapeChoiceQuery,
     getShapeColorQuery,
     getTextColorQuery
-} = require('./lib/JS/query');
+} = require('./lib/JS/query.cjs');
 
 // Define the SVG template with a placeholder for shapes and text
 const svgTemplate =
