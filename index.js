@@ -39,4 +39,17 @@ async function createLogo() {
    default:
      break;
  }
+
+  // Replace the placeholder in the SVG template with the logo text and shape SVG
+  const logoContent =
+    svgTemplate.replace('<!-- Add shapes and text here -->', '\n' +
+      '    <text x="150" y="30" fill="' + textColor + '" font-size="16" text-anchor="middle">' + logoText + '</text>\n' +
+      '    ' + shapeSvg + '\n');
+
+  // Write the logo content to a file named 'logo.svg'
+  fs.writeFileSync('logo.svg', logoContent);
+  console.log('Generated logo.svg');
 }
+
+// Call the function to create the logo
+createLogo();
