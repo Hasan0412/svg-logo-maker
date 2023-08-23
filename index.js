@@ -15,4 +15,28 @@ async function createLogo() {
   // Get logo text and color from user input
   const logoText = await getLogoText();
   const textColor = await getLogoColor();
+
+ // Display available shape options
+ const shapeOptions = ['circle', 'triangle', 'square'];
+ console.log('Available shapes:', shapeOptions.join(', '));
+
+ // Get user-selected shape and shape color
+ const selectedShape = await getInput('Choose a shape from the list: ');
+ const shapeColor = await getLogoColor();
+
+ // Generate SVG code for the selected shape
+ let shapeSvg = '';
+ switch (selectedShape) {
+   case 'circle':
+     shapeSvg = circle(shapeColor);
+     break;
+   case 'triangle':
+     shapeSvg = triangle(shapeColor);
+     break;
+   case 'square':
+     shapeSvg = square(shapeColor);
+     break;
+   default:
+     break;
+ }
 }
