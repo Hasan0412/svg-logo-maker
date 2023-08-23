@@ -2,7 +2,6 @@
 const fs = require('fs');
 const { getLogoColor } = require('./lib/colorHandler');
 const { circle, triangle, square } = require('./lib/shape');
-const { getShapeChoiceQuery, getShapeColorQuery } = require('./lib/query');
 const {
     getLogoTextQuery,
     getShapeChoiceQuery,
@@ -20,7 +19,7 @@ const svgTemplate =
 async function createLogo() {
   // Get logo text and color from user input
   const logoText = await getLogoTextQuery();
-  const textColor = await getLogoColorQuery();
+  const textColor = await getLogoColor();
 
   const shapeOptions = ['circle', 'triangle', 'square'];
   const selectedShape = await getShapeChoiceQuery(shapeOptions);
