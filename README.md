@@ -1,1 +1,6 @@
-# svg-logo-maker
+# SVG Logo Maker (Object-Oriented Programming)
+
+## Description
+
+This 
+
