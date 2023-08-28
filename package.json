@@ -1,19 +1,23 @@
 {
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
   "name": "svg-logo-maker",
-  "version": "1.0.0",
-  "type": "module",
   "description": "",
+  "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
+  "devDependencies": {
+    "jest": "^29.5.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hasan0412/svg-logo-maker.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "inquirer": "^8.2.4"
-  }
+  "license": "ISC"
 }
