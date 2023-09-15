@@ -25,4 +25,4 @@ SVG Logo Maker is a command-line interface (CLI) application built using Node.js
 
 ![screenshot](/Screenshots/questions.png)
 
-[Walkthrough]
+[Walkthrough](https://drive.google.com/file/d/1HN1EdA2sCAFhPZQg-doTymji5GODMRuV/view?usp=sharing)
